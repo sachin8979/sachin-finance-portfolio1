@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-gradient {
+  background: linear-gradient(90deg, #7dd3fc, #c084fc);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.glass-input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 14px;
+  border-radius: 12px;
+  outline: none;
+  width: 100%;
+  color: white;
+}
+
+.glass-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 10px #8b5cf6;
+}
+
+.glass-button {
+  background: linear-gradient(90deg, #4f46e5, #a855f7);
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  width: 200px;
+  transition: 0.3s;
+  margin: auto;
+}
+
+.glass-button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
