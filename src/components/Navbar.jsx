@@ -55,15 +55,15 @@ export default function Navbar() {
         </nav>
 
         {/* Contact Button */}
-        <a
-          href="/contact"
+        <Link
+          to="/contact"
           className="hidden md:block px-6 py-2 rounded-xl
           bg-gradient-to-r from-yellow-500 to-yellow-600
           text-black font-semibold shadow-lg
           hover:shadow-yellow-500/40 transition-all"
         >
           Contact
-        </a>
+        </Link>
 
         {/* Mobile Menu Toggle */}
         <button
