@@ -33,7 +33,7 @@ export default function Navbar() {
         rounded-2xl mt-4">
 
         {/* Brand */}
-        <Link to="/about"  className="text-3xl font-semibold tracking-wide">
+        <Link to="/" className="text-3xl font-semibold tracking-wide">
           <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
             Sachin
           </span>
