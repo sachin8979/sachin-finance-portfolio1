@@ -15,23 +15,20 @@ export default function Contact() {
     setStatus("Sending...");
 
     try {
-      const response = await fetch("https://finance-backend-p4nq.onrender.com/api/contact", {
+      const response = await fetch("http://localhost:5000/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-
       if (response.ok) {
         setStatus("Message Sent Successfully ✔");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setStatus(`Failed: ${data.message || "Server Error"}`);
+        setStatus("Failed to send message ❌");
       }
     } catch (error) {
-      console.error("Contact Error:", error);
-      setStatus("Error: Failed to send. Check connection. ❌");
+      setStatus("Server Error ❌");
     }
   };
 

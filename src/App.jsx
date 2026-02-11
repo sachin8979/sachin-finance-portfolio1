@@ -10,7 +10,7 @@ import Experience from "./pages/Experience";
 import Education from "./pages/Education";
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
-import ContactPage from "./pages/ContactPage";
+import Contact from "./pages/Contact";
 import Certifications from "./pages/Certifications";
 
 export default function App() {
@@ -26,7 +26,7 @@ export default function App() {
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/certifications" element={<Certifications />} />
         </Routes>
       </PageLayout>
