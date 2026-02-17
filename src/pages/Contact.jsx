@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { sendContactMessage } from "../api/contactApi";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,23 +16,13 @@ export default function Contact() {
     setStatus("Sending...");
 
     try {
-      const response = await fetch("https://finance-backend-p4nq.onrender.com/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      await sendContactMessage(formData);
 
-      const data = await response.json();
-
-      if (response.ok) {
-        setStatus("Message Sent Successfully ✔");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus(`Failed: ${data.message || "Server Error"}`);
-      }
+      setStatus("Message Sent Successfully ✔");
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("Contact Error:", error);
-      setStatus("Error: Failed to send. Check connection. ❌");
+      setStatus(`Failed: ${error.response?.data?.message || error.message || "Server Error"}`);
     }
   };
 

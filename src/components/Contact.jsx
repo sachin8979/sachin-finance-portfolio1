@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import { sendContactMessage } from "../api/contactApi";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -19,7 +19,7 @@ export default function Contact() {
     setStatus("Sending...");
 
     try {
-      await axios.post("https://finance-backend-p4nq.onrender.com/api/contact", form);
+      await sendContactMessage(form);
       setStatus("Message sent successfully!");
       setForm({ name: "", email: "", message: "" });
     } catch (error) {
